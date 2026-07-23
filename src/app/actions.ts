@@ -16,7 +16,7 @@ export type FormState = {
 export async function submitContactForm(
   prevState: FormState,
   formData: FormData,
-): Promise {
+): Promise<FormState> {
   const rawData = {
     name: formData.get("name"),
     email: formData.get("email"),
@@ -30,6 +30,5 @@ export async function submitContactForm(
   }
 
   console.log("New Lead Captured:", validatedData.data);
-  // Here is where we will later connect to a DB or Slack webhook
   return { success: "Message sent successfully!" };
 }
