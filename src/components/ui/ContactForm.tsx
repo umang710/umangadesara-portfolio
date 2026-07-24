@@ -12,7 +12,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full py-3.5 px-6 bg-[#BB528A] hover:bg-[#a04575] text-white font-semibold rounded-lg transition-all duration-200 shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+      className="w-full py-3.5 px-6 bg-brand-accent hover:bg-brand-accent-hover text-white font-semibold rounded-lg transition-all duration-200 shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
     >
       {pending ? (
         <>
@@ -49,7 +49,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-zinc-800 mb-1.5"
+            className="block text-sm font-medium text-zinc-800 dark:text-zinc-200 mb-1.5"
           >
             System ID / Name
           </label>
@@ -58,7 +58,7 @@ export function ContactForm() {
             name="name"
             type="text"
             required
-            className="w-full px-4 py-3 bg-white/80 border border-[#BB528A]/20 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#BB528A]/50 focus:border-transparent transition-all shadow-sm"
+            className="w-full px-4 py-3 bg-white/80 dark:bg-zinc-950/80 border border-brand-accent/20 rounded-lg text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-transparent transition-all shadow-sm"
             placeholder="John Doe"
           />
         </div>
@@ -66,7 +66,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-zinc-800 mb-1.5"
+            className="block text-sm font-medium text-zinc-800 dark:text-zinc-200 mb-1.5"
           >
             Return Address / Email
           </label>
@@ -75,7 +75,7 @@ export function ContactForm() {
             name="email"
             type="email"
             required
-            className="w-full px-4 py-3 bg-white/80 border border-[#BB528A]/20 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#BB528A]/50 focus:border-transparent transition-all shadow-sm"
+            className="w-full px-4 py-3 bg-white/80 dark:bg-zinc-950/80 border border-brand-accent/20 rounded-lg text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-transparent transition-all shadow-sm"
             placeholder="john@example.com"
           />
         </div>
@@ -83,7 +83,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-zinc-800 mb-1.5"
+            className="block text-sm font-medium text-zinc-800 dark:text-zinc-200 mb-1.5"
           >
             Payload / Message
           </label>
@@ -92,20 +92,22 @@ export function ContactForm() {
             name="message"
             required
             rows={5}
-            className="w-full px-4 py-3 bg-white/80 border border-[#BB528A]/20 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#BB528A]/50 focus:border-transparent transition-all shadow-sm resize-none"
+            className="w-full px-4 py-3 bg-white/80 dark:bg-zinc-950/80 border border-brand-accent/20 rounded-lg text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-transparent transition-all shadow-sm resize-none"
             placeholder="Let's build something..."
           />
         </div>
       </div>
 
+      {/* Enhanced Error State for Light/Dark Mode */}
       {state?.error && (
-        <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm">
+        <div className="p-3 rounded-lg bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900 text-red-600 dark:text-red-400 text-sm transition-colors duration-300">
           {state.error}
         </div>
       )}
 
+      {/* Enhanced Success State for Light/Dark Mode */}
       {state?.success && (
-        <div className="p-3 rounded-lg bg-green-50 border border-green-200 text-green-600 text-sm">
+        <div className="p-3 rounded-lg bg-green-50 dark:bg-green-950/50 border border-green-200 dark:border-green-900 text-green-600 dark:text-green-400 text-sm transition-colors duration-300">
           {state.success}
         </div>
       )}
