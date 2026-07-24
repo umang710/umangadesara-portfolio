@@ -25,8 +25,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-brand-light dark:bg-background text-zinc-900 dark:text-zinc-100 antialiased relative min-h-screen flex flex-col transition-colors duration-300`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {/* The Premium Background Grid - Adapts to Light and Dark Mode */}
           <div className="fixed inset-0 z-0 h-full w-full bg-[linear-gradient(to_right,#BB528A25_1px,transparent_1px),linear-gradient(to_bottom,#BB528A25_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]">
             {/* The Glow Sphere - Uses clean brand-accent class */}
@@ -40,7 +39,6 @@ export default function RootLayout({
           <div className="pt-16 relative z-10 flex-grow">{children}</div>
 
           <Footer />
-          
         </ThemeProvider>
       </body>
     </html>

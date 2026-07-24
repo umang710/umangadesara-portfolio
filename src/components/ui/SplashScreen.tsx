@@ -21,12 +21,11 @@ export function SplashScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[#F6E3E5] transition-opacity duration-700 ease-in-out ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-brand-light dark:bg-background transition-opacity duration-700 ease-in-out ${
         stage === "fading" ? "opacity-0" : "opacity-100"
       }`}
     >
-      {/* Removed gradient, added solid #BB528A text color */}
-      <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-[#BB528A] animate-in fade-in slide-in-from-top-8 duration-700 pb-4">
+      <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-brand-accent animate-in fade-in slide-in-from-top-8 duration-700 pb-4">
         Umang Adesara
       </h1>
     </div>
