@@ -19,7 +19,7 @@ export function Navbar() {
             Home
           </Link>
           <Link
-            href="#projects"
+            href="/projects"
             className="hover:text-zinc-100 transition-colors"
           >
             Live Deployments
