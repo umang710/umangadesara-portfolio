@@ -3,7 +3,7 @@
 import { useFormStatus } from "react-dom";
 import { useActionState, useEffect, useRef } from "react";
 import { submitContactForm } from "@/app/actions";
-import { Loader2 } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -12,7 +12,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full py-2.5 px-4 bg-zinc-100 hover:bg-white text-zinc-900 font-medium rounded-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+      className="w-full py-3.5 px-6 bg-[#BB528A] hover:bg-[#a04575] text-white font-semibold rounded-lg transition-all duration-200 shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
     >
       {pending ? (
         <>
@@ -20,14 +20,16 @@ function SubmitButton() {
           Transmitting...
         </>
       ) : (
-        "Send"
+        <>
+          <Send className="w-4 h-4" />
+          Transmit Data
+        </>
       )}
     </button>
   );
 }
 
 export function ContactForm() {
-  // 1. Hook renamed to useActionState
   const [state, formAction] = useActionState(submitContactForm, null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -41,22 +43,22 @@ export function ContactForm() {
     <form
       ref={formRef}
       action={formAction}
-      className="space-y-4 p-4 md:p-6 bg-[#09090b] rounded-xl"
+      className="space-y-6 bg-transparent"
     >
-      <div className="space-y-4">
+      <div className="space-y-5">
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-zinc-400 mb-1.5"
+            className="block text-sm font-medium text-zinc-800 mb-1.5"
           >
-            Identifier (Name)
+            System ID / Name
           </label>
           <input
             id="name"
             name="name"
             type="text"
             required
-            className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-800 rounded-lg text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 bg-white/80 border border-[#BB528A]/20 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#BB528A]/50 focus:border-transparent transition-all shadow-sm"
             placeholder="John Doe"
           />
         </div>
@@ -64,16 +66,16 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-zinc-400 mb-1.5"
+            className="block text-sm font-medium text-zinc-800 mb-1.5"
           >
-            Return Address (Email)
+            Return Address / Email
           </label>
           <input
             id="email"
             name="email"
             type="email"
             required
-            className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-800 rounded-lg text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 bg-white/80 border border-[#BB528A]/20 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#BB528A]/50 focus:border-transparent transition-all shadow-sm"
             placeholder="john@example.com"
           />
         </div>
@@ -81,29 +83,29 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-zinc-400 mb-1.5"
+            className="block text-sm font-medium text-zinc-800 mb-1.5"
           >
-            Transmission Data (Message)
+            Payload / Message
           </label>
           <textarea
             id="message"
             name="message"
             required
-            rows={4}
-            className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-800 rounded-lg text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all resize-none"
+            rows={5}
+            className="w-full px-4 py-3 bg-white/80 border border-[#BB528A]/20 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#BB528A]/50 focus:border-transparent transition-all shadow-sm resize-none"
             placeholder="Let's build something..."
           />
         </div>
       </div>
 
       {state?.error && (
-        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+        <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm">
           {state.error}
         </div>
       )}
 
       {state?.success && (
-        <div className="p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-sm">
+        <div className="p-3 rounded-lg bg-green-50 border border-green-200 text-green-600 text-sm">
           {state.success}
         </div>
       )}

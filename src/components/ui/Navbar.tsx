@@ -1,35 +1,48 @@
 import Link from "next/link";
-import { Terminal } from "lucide-react";
+import { Terminal, Download } from "lucide-react";
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#09090b]/80 backdrop-blur-md border-b border-zinc-800/50">
+    <nav className="fixed top-0 w-full z-50 bg-[#F6E3E5]/80 backdrop-blur-md border-b border-[#BB528A]/20">
       <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Terminal className="w-5 h-5 text-zinc-400 group-hover:text-zinc-100 transition-colors" />
-          <span className="font-semibold text-zinc-100 tracking-tight group-hover:text-white transition-colors">
+          <Terminal className="w-5 h-5 text-[#BB528A] group-hover:scale-110 transition-transform" />
+          <span className="font-semibold text-zinc-900 tracking-tight transition-colors">
             Umang Adesara
           </span>
         </Link>
 
-        {/* Navigation Links */}
-        <div className="flex items-center gap-6 text-sm font-medium text-zinc-400">
-          <Link href="/" className="hover:text-zinc-100 transition-colors">
+        <div className="flex items-center gap-6 text-sm font-medium text-zinc-600">
+          <Link
+            href="/"
+            className="hover:text-[#BB528A] transition-colors hidden sm:block"
+          >
             Home
           </Link>
           <Link
             href="/projects"
-            className="hover:text-zinc-100 transition-colors"
+            className="hover:text-[#BB528A] transition-colors hidden sm:block"
           >
-            Live Deployments
+            Deployments
           </Link>
           <Link
             href="/contact"
-            className="hover:text-zinc-100 transition-colors"
+            className="hover:text-[#BB528A] transition-colors hidden sm:block"
           >
             Contact
           </Link>
+
+          {/* Updated Resume Button with Download Attribute */}
+          <a
+            href="/Umang_Adesara_Resume.pdf"
+            download="Umang_Adesara_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#BB528A] text-white hover:bg-[#a04575] shadow-sm transition-colors font-semibold ml-2"
+          >
+            <Download className="w-3.5 h-3.5" />
+            Resume
+          </a>
         </div>
       </div>
     </nav>
