@@ -1,4 +1,4 @@
-import { Terminal, ExternalLink } from "lucide-react";
+import { Terminal, ExternalLink, Hammer } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 export const metadata = {
@@ -10,6 +10,7 @@ export default function ProjectsPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-24 relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out">
       <section className="space-y-8">
+        {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 space-y-3">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 text-sm font-mono text-zinc-500">
@@ -25,6 +26,7 @@ export default function ProjectsPage() {
             </p>
           </div>
 
+          {/* This main GitHub link remains active */}
           <a
             href="https://github.com/umang710"
             target="_blank"
@@ -37,20 +39,34 @@ export default function ProjectsPage() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-8">
+        {/* Work in Progress Banner */}
+        <div className="flex items-start sm:items-center gap-3 p-4 bg-white/60 backdrop-blur-sm border border-[#BB528A]/20 rounded-lg shadow-sm">
+          <div className="p-2 bg-[#BB528A]/10 rounded-md shrink-0">
+            <Hammer className="w-4 h-4 text-[#BB528A]" />
+          </div>
+          <p className="text-sm font-medium text-zinc-700">
+            <span className="text-[#BB528A] font-semibold">
+              Infrastructure Update:
+            </span>{" "}
+            These deployments are currently being migrated. Live project links
+            are temporarily disabled and will be available soon.
+          </p>
+        </div>
+
+        {/* Project Grid (Cards are visually disabled) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
           {/* Project 1: Productivity Engine */}
           <a
-            href="https://github.com/umang710"
-            target="_blank"
-            rel="noreferrer"
-            className="group block p-6 border border-[#BB528A]/20 rounded-xl bg-white/40 hover:bg-white/70 transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-md relative overflow-hidden"
+            href="#"
+            aria-disabled="true"
+            className="group block p-6 border border-[#BB528A]/20 rounded-xl bg-white/40 backdrop-blur-sm shadow-sm relative overflow-hidden opacity-60 pointer-events-none"
           >
-            <div className="absolute top-4 right-4 text-zinc-400 group-hover:text-[#BB528A] transition-colors">
+            <div className="absolute top-4 right-4 text-zinc-400">
               <ExternalLink className="w-5 h-5" />
             </div>
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h3 className="font-semibold text-zinc-900 text-lg mb-3 group-hover:text-[#BB528A] transition-colors">
+                <h3 className="font-semibold text-zinc-900 text-lg mb-3">
                   Personal Productivity Engine
                 </h3>
                 <p className="text-zinc-600 text-sm leading-relaxed mb-6">
@@ -68,24 +84,23 @@ export default function ProjectsPage() {
                     Supabase
                   </span>
                 </div>
-                <FaGithub className="w-5 h-5 text-zinc-400 group-hover:text-[#BB528A]" />
+                <FaGithub className="w-5 h-5 text-zinc-400" />
               </div>
             </div>
           </a>
 
           {/* Project 2: Geospatial Mapping */}
           <a
-            href="https://github.com/umang710"
-            target="_blank"
-            rel="noreferrer"
-            className="group block p-6 border border-[#BB528A]/20 rounded-xl bg-white/40 hover:bg-white/70 transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-md relative overflow-hidden"
+            href="#"
+            aria-disabled="true"
+            className="group block p-6 border border-[#BB528A]/20 rounded-xl bg-white/40 backdrop-blur-sm shadow-sm relative overflow-hidden opacity-60 pointer-events-none"
           >
-            <div className="absolute top-4 right-4 text-zinc-400 group-hover:text-[#BB528A] transition-colors">
+            <div className="absolute top-4 right-4 text-zinc-400">
               <ExternalLink className="w-5 h-5" />
             </div>
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h3 className="font-semibold text-zinc-900 text-lg mb-3 group-hover:text-[#BB528A] transition-colors">
+                <h3 className="font-semibold text-zinc-900 text-lg mb-3">
                   Geospatial Mapping System
                 </h3>
                 <p className="text-zinc-600 text-sm leading-relaxed mb-6">
@@ -103,24 +118,23 @@ export default function ProjectsPage() {
                     QGIS
                   </span>
                 </div>
-                <FaGithub className="w-5 h-5 text-zinc-400 group-hover:text-[#BB528A]" />
+                <FaGithub className="w-5 h-5 text-zinc-400" />
               </div>
             </div>
           </a>
 
           {/* Project 3: Code Summarization */}
           <a
-            href="https://github.com/umang710"
-            target="_blank"
-            rel="noreferrer"
-            className="group block p-6 border border-[#BB528A]/20 rounded-xl bg-white/40 hover:bg-white/70 transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-md relative overflow-hidden md:col-span-2"
+            href="#"
+            aria-disabled="true"
+            className="group block p-6 border border-[#BB528A]/20 rounded-xl bg-white/40 backdrop-blur-sm shadow-sm relative overflow-hidden md:col-span-2 opacity-60 pointer-events-none"
           >
-            <div className="absolute top-4 right-4 text-zinc-400 group-hover:text-[#BB528A] transition-colors">
+            <div className="absolute top-4 right-4 text-zinc-400">
               <ExternalLink className="w-5 h-5" />
             </div>
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h3 className="font-semibold text-zinc-900 text-lg mb-3 group-hover:text-[#BB528A] transition-colors">
+                <h3 className="font-semibold text-zinc-900 text-lg mb-3">
                   Code Summarization Framework
                 </h3>
                 <p className="text-zinc-600 text-sm leading-relaxed mb-6">
@@ -138,7 +152,7 @@ export default function ProjectsPage() {
                     PyTorch
                   </span>
                 </div>
-                <FaGithub className="w-5 h-5 text-zinc-400 group-hover:text-[#BB528A]" />
+                <FaGithub className="w-5 h-5 text-zinc-400" />
               </div>
             </div>
           </a>
