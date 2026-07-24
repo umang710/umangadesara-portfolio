@@ -32,7 +32,7 @@ export default function Home() {
 
           <div className="flex items-center gap-4 pt-4">
             <a
-              href="https://github.com/YOUR_GITHUB"
+              href="https://github.com/umang710"
               target="_blank"
               rel="noreferrer"
               className="group p-3 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-300"
@@ -40,7 +40,7 @@ export default function Home() {
               <FaGithub className="w-5 h-5 text-zinc-400 group-hover:text-zinc-100 transition-colors" />
             </a>
             <a
-              href="https://linkedin.com/in/YOUR_LINKEDIN"
+              href="https://linkedin.com/in/umangadesara710"
               target="_blank"
               rel="noreferrer"
               className="group p-3 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-300"
