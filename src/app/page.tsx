@@ -53,7 +53,7 @@ export default function Home() {
               <FaLinkedin className="w-5 h-5 text-zinc-400 group-hover:text-zinc-100 transition-colors" />
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="group p-3 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-300"
             >
               <Mail className="w-5 h-5 text-zinc-400 group-hover:text-zinc-100 transition-colors" />
