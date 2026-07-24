@@ -35,7 +35,9 @@ export async function submitContactForm(
   const validatedData = contactSchema.safeParse(rawData);
 
   if (!validatedData.success) {
-    return { error: "Validation failed. Please check your inputs." };
+    // Extract the very first error message Zod caught
+    const errorMessage = validatedData.error.issues[0].message;
+    return { error: errorMessage };
   }
 
   const { name, email, message } = validatedData.data;
