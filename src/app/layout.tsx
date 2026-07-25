@@ -9,7 +9,7 @@ import { ThemeProvider } from "@teispace/next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://umangadesara.com"), // <--- THIS FIXES IT
   title: "Umang Adesara | Full Stack Engineer",
   description:
