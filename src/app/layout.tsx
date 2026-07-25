@@ -9,40 +9,66 @@ import { ThemeProvider } from "@teispace/next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://umangadesara.com"), // <--- THIS FIXES IT
-  title: "Umang Adesara | Full Stack Engineer",
+  metadataBase: new URL("https://umangadesara.com"),
+  title: {
+    default: "Umang Adesara | Full Stack & AI Engineer",
+    template: "%s | Umang Adesara",
+  },
   description:
-    "Full Stack Software Engineer specializing in React, Next.js, Python, and cloud infrastructure. Run an AI match on my portfolio to see if I fit your stack.",
+    "Full Stack Software Engineer & Data Scientist specializing in React, Next.js, Python, and AI systems. Run an interactive AI match on my portfolio.",
   keywords: [
     "Umang Adesara",
     "Software Engineer",
     "Full Stack Developer",
+    "AI Engineer",
+    "Data Engineer",
+    "Data Scientist",
+    "AI Analyst",
+    "Data Analyst",
     "Next.js",
     "React",
     "Python",
     "Portfolio",
   ],
+  authors: [{ name: "Umang Adesara", url: "https://umangadesara.com" }],
+  creator: "Umang Adesara",
+  publisher: "Umang Adesara",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Umang Adesara | Full Stack Engineer",
-    description: "Run an AI semantic match on my engineering stack.",
+    type: "website",
+    locale: "en_US",
     url: "https://umangadesara.com",
+    title: "Umang Adesara | Full Stack & AI Engineer",
+    description:
+      "Building scalable web architecture and data-driven AI systems. Run a semantic match on my stack.",
     siteName: "Umang Adesara Portfolio",
     images: [
       {
-        url: "/og-image.png", // Now correctly resolves to https://umangadesara.com/og-image.png
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Umang Adesara - Software Engineer",
+        alt: "Umang Adesara - Full Stack & AI Engineer Portfolio",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Umang Adesara | Full Stack Engineer",
-    description: "Run an AI semantic match on my engineering stack.",
+    title: "Umang Adesara | Full Stack & AI Engineer",
+    description:
+      "Building scalable web architecture and data-driven AI systems. Run a semantic match on my stack.",
     images: ["/og-image.png"],
   },
 };
