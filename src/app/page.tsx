@@ -2,12 +2,12 @@ import { Cpu, GitCommit, Network } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { Mail } from "lucide-react";
+import { IntroVideo } from "@/components/ui/IntroVideo";
 
 export default function Home() {
   return (
     <main className="min-h-screen text-zinc-900 dark:text-zinc-100 font-sans selection:bg-brand-accent/20 dark:selection:bg-brand-accent/40 relative overflow-hidden transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 py-24 space-y-32 relative z-10">
-        
         {/* HERO SECTION */}
         <section className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
           <div className="space-y-4">
@@ -25,6 +25,11 @@ export default function Home() {
               and data-driven solutions from the edge to the database.
             </p>
           </div>
+
+          {/* CINEMATIC INTRO VIDEO */}
+          <section className="pt-8 pb-12 w-full">
+            <IntroVideo />
+          </section>
 
           <div className="flex items-center gap-4 pt-2">
             <a
@@ -111,7 +116,6 @@ export default function Home() {
           </div>
 
           <div className="relative border-l border-brand-accent/30 ml-3 space-y-12 pb-4 pt-2 transition-colors duration-300">
-            
             {/* Timeline Item 1 */}
             <div className="relative pl-8 group">
               <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-white dark:bg-zinc-950 border border-brand-accent ring-4 ring-brand-light dark:ring-zinc-900 transition-colors duration-300" />
@@ -122,7 +126,9 @@ export default function Home() {
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
                   Lead Software Engineer
                 </h3>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400 transition-colors duration-300">nexvest.in</span>
+                <span className="text-sm text-zinc-600 dark:text-zinc-400 transition-colors duration-300">
+                  nexvest.in
+                </span>
               </div>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed text-justify transition-colors duration-300">
                 Architecting and deploying a highly scalable, full-stack
@@ -182,7 +188,9 @@ export default function Home() {
                 <span className="text-xs font-mono text-brand-accent/80 transition-colors duration-300">
                   2020 — 2023
                 </span>
-                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 transition-colors duration-300">B.C.A.</h3>
+                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+                  B.C.A.
+                </h3>
                 <span className="text-sm text-zinc-600 dark:text-zinc-400 transition-colors duration-300">
                   Symbiosis Institute of Computer Studies and Research, Pune
                 </span>
@@ -228,7 +236,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
       </div>
     </main>
   );
