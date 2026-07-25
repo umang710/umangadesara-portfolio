@@ -9,9 +9,42 @@ import { ThemeProvider } from "@teispace/next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Umang Adesara | Builder",
-  description: "Lead Software Engineer & Technical Founder",
+export const metadata = {
+  metadataBase: new URL("https://umangadesara.com"), // <--- THIS FIXES IT
+  title: "Umang Adesara | Full Stack Engineer",
+  description:
+    "Full Stack Software Engineer specializing in React, Next.js, Python, and cloud infrastructure. Run an AI match on my portfolio to see if I fit your stack.",
+  keywords: [
+    "Umang Adesara",
+    "Software Engineer",
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "Python",
+    "Portfolio",
+  ],
+  openGraph: {
+    title: "Umang Adesara | Full Stack Engineer",
+    description: "Run an AI semantic match on my engineering stack.",
+    url: "https://umangadesara.com",
+    siteName: "Umang Adesara Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // Now correctly resolves to https://umangadesara.com/og-image.png
+        width: 1200,
+        height: 630,
+        alt: "Umang Adesara - Software Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Umang Adesara | Full Stack Engineer",
+    description: "Run an AI semantic match on my engineering stack.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
