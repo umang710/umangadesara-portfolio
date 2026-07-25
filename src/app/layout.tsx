@@ -9,8 +9,6 @@ import { ThemeProvider } from "@teispace/next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import type { Metadata } from "next";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://umangadesara.com"),
   title: {
