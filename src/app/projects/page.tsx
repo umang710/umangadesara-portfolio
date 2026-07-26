@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                       Live Demo
                     </a>
                     <a
-                      href="https://github.com/umang710/AI-Control-Plane"
+                      href="https://github.com/umang710/autonomous-ai-control-plane"
                       target="_blank"
                       rel="noreferrer"
                       className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-md transition-colors duration-75"
