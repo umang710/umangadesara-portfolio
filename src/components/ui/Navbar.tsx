@@ -12,7 +12,6 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-brand-light/80 dark:bg-background/80 backdrop-blur-md border-b border-brand-accent/20 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-        
         {/* Brand / Logo */}
         <Link
           href="/"
@@ -28,17 +27,29 @@ export function Navbar() {
         {/* =========================================
             DESKTOP NAVIGATION (Hidden on mobile)
             ========================================= */}
-        <div className="hidden sm:flex items-center gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
-          <Link href="/" className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors">
+        <div className="hidden md:flex items-center gap-4 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+          <Link
+            href="/projects"
+            className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+          >
             Deployments
           </Link>
-          <Link href="/architecture" className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors">
+          <Link
+            href="/architecture"
+            className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+          >
             Architecture
           </Link>
-          <Link href="/contact" className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors">
+          <Link
+            href="/blog"
+            className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+          >
             Contact
           </Link>
 
@@ -77,8 +88,7 @@ export function Navbar() {
         {/* =========================================
             MOBILE TOP BAR
             ========================================= */}
-        <div className="flex items-center gap-3 sm:hidden">
-          
+        <div className="flex items-center gap-3 md:hidden">
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -88,6 +98,16 @@ export function Navbar() {
             <Sun className="w-4 h-4 hidden dark:block" />
             <Moon className="w-4 h-4 block dark:hidden" />
           </button>
+
+          {/* Mobile Recruit Me Button */}
+          <Link
+            href="/recruit"
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-brand-accent/10 hover:bg-brand-accent/20 border border-brand-accent/30 text-brand-accent text-xs font-semibold transition-all shadow-sm"
+          >
+            <Sparkles className="w-3 h-3" />
+            <span className="hidden min-[360px]:inline">Recruit Me</span>
+            <span className="inline min-[360px]:hidden">Recruit</span>
+          </Link>
 
           {/* Resume Button */}
           <a
@@ -116,17 +136,36 @@ export function Navbar() {
           MOBILE DROPDOWN MENU
           ========================================= */}
       {isOpen && (
-        <div className="sm:hidden absolute top-16 left-0 w-full bg-brand-light/95 dark:bg-background/95 backdrop-blur-md border-b border-brand-accent/20 px-6 py-6 flex flex-col gap-4 shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
-          <Link href="/" onClick={() => setIsOpen(false)} className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-brand-light/95 dark:bg-background/95 backdrop-blur-md border-b border-brand-accent/20 px-6 py-6 flex flex-col gap-4 shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
+          <Link
+            href="/"
+            onClick={() => setIsOpen(false)}
+            className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10"
+          >
             Home
           </Link>
-          <Link href="/projects" onClick={() => setIsOpen(false)} className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10">
+          <Link
+            href="/projects"
+            onClick={() => setIsOpen(false)}
+            className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10"
+          >
             Deployments
           </Link>
-          <Link href="/architecture" onClick={() => setIsOpen(false)} className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10">
+          <Link
+            href="/architecture"
+            onClick={() => setIsOpen(false)}
+            className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10"
+          >
             Architecture
           </Link>
-          
+          <Link
+            href="/blog"
+            onClick={() => setIsOpen(false)}
+            className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10"
+          >
+            Blog
+          </Link>
+
           <Link
             href="/recruit"
             onClick={() => setIsOpen(false)}
@@ -136,10 +175,16 @@ export function Navbar() {
               <Sparkles className="w-4 h-4" />
               <span>Recruit Me</span>
             </div>
-            <span className="text-[10px] font-mono bg-brand-accent/10 px-2 py-0.5 rounded uppercase tracking-wider">AI Matcher</span>
+            <span className="text-[10px] font-mono bg-brand-accent/10 px-2 py-0.5 rounded uppercase tracking-wider">
+              AI Matcher
+            </span>
           </Link>
 
-          <Link href="/contact" onClick={() => setIsOpen(false)} className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2">
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2"
+          >
             Contact
           </Link>
         </div>

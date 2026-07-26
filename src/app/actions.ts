@@ -4,6 +4,8 @@ import { z } from "zod";
 import { Resend } from "resend";
 import { createClient } from "@supabase/supabase-js";
 
+import { headers } from "next/headers";
+
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
@@ -15,10 +17,35 @@ export type FormState = {
   error?: string;
 } | null;
 
+// Simple in-memory rate limiting (Note: In a distributed serverless environment,
+// this is per-instance, but it still provides a solid baseline shield against bursts)
+const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
+const MAX_REQUESTS = 3; // Max 3 emails
+const WINDOW_MS = 60 * 60 * 1000; // per 1 hour
+
 export async function submitContactForm(
   prevState: FormState,
   formData: FormData,
 ): Promise<FormState> {
+  // --- RATE LIMITING CHECK ---
+  try {
+    const headersList = await headers();
+    const ip = headersList.get("x-forwarded-for") || "unknown-ip";
+    const now = Date.now();
+    const userLimit = rateLimitMap.get(ip);
+
+    if (userLimit && now - userLimit.timestamp < WINDOW_MS) {
+      if (userLimit.count >= MAX_REQUESTS) {
+        return { error: "Too many requests. Please try again later." };
+      }
+      userLimit.count++;
+    } else {
+      rateLimitMap.set(ip, { count: 1, timestamp: now });
+    }
+  } catch (e) {
+    // Failsafe: if headers() fails in a specific edge runtime, just continue
+  }
+  // ---------------------------
   // 1. Initialize services INSIDE the execution block
   const resend = new Resend(process.env.RESEND_API_KEY!);
   const supabase = createClient(

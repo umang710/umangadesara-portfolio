@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,8 +9,8 @@
 
 @theme inline {
   /* --- YOUR CUSTOM BRAND COLORS --- */
-  --color-brand-light: #F6E3E5;
-  --color-brand-accent: #BB528A;
+  --color-brand-light: #f6e3e5;
+  --color-brand-accent: #bb528a;
   --color-brand-accent-hover: #a04575;
 
   /* --- SHADCN DEFAULT COLORS --- */
