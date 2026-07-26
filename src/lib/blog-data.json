@@ -1,0 +1,9 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello World: My First MDX Post",
+    "date": "2026-07-26",
+    "description": "Exploring the new dynamic MDX blog system on my portfolio.",
+    "content": "\r\n# Welcome to my digital garden\r\n\r\nThis is a test post to ensure the MDX pipeline is working correctly.\r\n\r\n## Why MDX?\r\n\r\nMDX allows me to use **JSX** in my markdown files, meaning I can mix interactive React components with standard writing.\r\n\r\n### Code Example\r\n\r\n```javascript\r\nconsole.log(\"Hello, world!\");\r\n```\r\n"
+  }
+]

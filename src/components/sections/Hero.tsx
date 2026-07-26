@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { Mail } from "lucide-react";
@@ -28,28 +31,44 @@ export function Hero() {
       </section>
 
       <div className="flex items-center gap-4 pt-2">
-        <a
-          href="https://github.com/umang710"
-          target="_blank"
-          rel="noreferrer"
-          className="group p-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm border border-brand-accent/20 rounded-lg hover:bg-white dark:hover:bg-zinc-800 hover:border-brand-accent/40 transition-all duration-300 shadow-sm"
+        <motion.div
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <FaGithub className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-brand-accent dark:group-hover:text-brand-accent transition-colors" />
-        </a>
-        <a
-          href="https://linkedin.com/in/umangadesara710"
-          target="_blank"
-          rel="noreferrer"
-          className="group p-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm border border-brand-accent/20 rounded-lg hover:bg-white dark:hover:bg-zinc-800 hover:border-brand-accent/40 transition-all duration-300 shadow-sm"
+          <a
+            href="https://github.com/umang710"
+            target="_blank"
+            rel="noreferrer"
+            className="group block p-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm border border-brand-accent/20 rounded-lg hover:bg-white dark:hover:bg-zinc-800 hover:border-brand-accent/40 transition-all duration-300 shadow-sm"
+          >
+            <FaGithub className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-brand-accent dark:group-hover:text-brand-accent transition-colors" />
+          </a>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <FaLinkedin className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-brand-accent dark:group-hover:text-brand-accent transition-colors" />
-        </a>
-        <Link
-          href="/contact"
-          className="group p-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm border border-brand-accent/20 rounded-lg hover:bg-white dark:hover:bg-zinc-800 hover:border-brand-accent/40 transition-all duration-300 shadow-sm"
+          <a
+            href="https://linkedin.com/in/umangadesara710"
+            target="_blank"
+            rel="noreferrer"
+            className="group block p-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm border border-brand-accent/20 rounded-lg hover:bg-white dark:hover:bg-zinc-800 hover:border-brand-accent/40 transition-all duration-300 shadow-sm"
+          >
+            <FaLinkedin className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-brand-accent dark:group-hover:text-brand-accent transition-colors" />
+          </a>
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <Mail className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-brand-accent dark:group-hover:text-brand-accent transition-colors" />
-        </Link>
+          <Link
+            href="/contact"
+            className="group block p-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm border border-brand-accent/20 rounded-lg hover:bg-white dark:hover:bg-zinc-800 hover:border-brand-accent/40 transition-all duration-300 shadow-sm"
+          >
+            <Mail className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-brand-accent dark:group-hover:text-brand-accent transition-colors" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

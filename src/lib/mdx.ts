@@ -1,8 +1,4 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-
-const blogDirectory = path.join(process.cwd(), "content/blog");
+import blogData from "./blog-data.json";
 
 export interface BlogPostMeta {
   title: string;
@@ -16,52 +12,35 @@ export interface BlogPost {
   content: string;
 }
 
+interface RawPost {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  content: string;
+}
+
 export function getBlogPosts(): BlogPostMeta[] {
-  if (!fs.existsSync(blogDirectory)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(blogDirectory);
-
-  const posts = files
-    .filter((filename) => filename.endsWith(".mdx"))
-    .map((filename) => {
-      const slug = filename.replace(".mdx", "");
-      const fullPath = path.join(blogDirectory, filename);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-
-      const { data } = matter(fileContents);
-
-      return {
-        slug,
-        title: data.title || "Untitled",
-        date: data.date || "",
-        description: data.description || "",
-      };
-    })
+  return (blogData as RawPost[])
+    .map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      description: post.description,
+    }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  return posts;
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | null {
-  try {
-    const fullPath = path.join(blogDirectory, `${slug}.mdx`);
-    if (!fs.existsSync(fullPath)) return null;
-
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data, content } = matter(fileContents);
-
-    return {
-      meta: {
-        slug,
-        title: data.title || "Untitled",
-        date: data.date || "",
-        description: data.description || "",
-      },
-      content,
-    };
-  } catch (error) {
-    return null;
-  }
+  const post = (blogData as RawPost[]).find((p) => p.slug === slug);
+  if (!post) return null;
+  return {
+    meta: {
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      description: post.description,
+    },
+    content: post.content,
+  };
 }

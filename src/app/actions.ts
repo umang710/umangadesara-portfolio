@@ -42,7 +42,7 @@ export async function submitContactForm(
     } else {
       rateLimitMap.set(ip, { count: 1, timestamp: now });
     }
-  } catch (e) {
+  } catch {
     // Failsafe: if headers() fails in a specific edge runtime, just continue
   }
   // ---------------------------

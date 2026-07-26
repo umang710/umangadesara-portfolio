@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { MouseGlow } from "@/components/ui/MouseGlow";
 import { Footer } from "@/components/ui/Footer";
 import { SplashScreen } from "@/components/ui/SplashScreen";
 import { ThemeProvider } from "@teispace/next-themes";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://umangadesara.com"),
@@ -80,9 +78,18 @@ export default function RootLayout({
     // suppressHydrationWarning is required by next-themes
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-brand-light dark:bg-background text-zinc-900 dark:text-zinc-100 antialiased relative min-h-screen flex flex-col transition-colors duration-300`}
+        className={`${GeistSans.className} bg-brand-light dark:bg-background text-zinc-900 dark:text-zinc-100 antialiased relative min-h-screen flex flex-col transition-colors duration-300`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {/* Film Grain Noise Overlay */}
+          <div
+            className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03] dark:opacity-[0.02]"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+            }}
+          ></div>
+
           {/* The Premium Background Grid - Adapts to Light and Dark Mode */}
           <div className="fixed inset-0 z-0 h-full w-full bg-[linear-gradient(to_right,#BB528A25_1px,transparent_1px),linear-gradient(to_bottom,#BB528A25_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]">
             {/* The Glow Sphere - Uses clean brand-accent class */}
