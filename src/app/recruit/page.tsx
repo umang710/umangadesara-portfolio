@@ -13,14 +13,14 @@ export default function RecruitPage() {
       <Reveal>
         <section className="space-y-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-sm font-mono text-zinc-500 dark:text-zinc-400 transition-colors duration-300">
+            <div className="inline-flex items-center gap-2 text-sm font-mono text-zinc-500 dark:text-zinc-400">
               <Sparkles className="w-4 h-4 text-brand-accent" />
               <span>AI Verification Engine</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
               Evaluate System Fit
             </h1>
-            <p className="text-zinc-600 dark:text-zinc-400 max-w-xl text-base leading-relaxed transition-colors duration-300">
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-xl text-base leading-relaxed">
               Evaluating my background for an engineering role? Paste your job
               description below to run an automated semantic analysis against my
               verified stack and core competencies.
@@ -28,8 +28,8 @@ export default function RecruitPage() {
           </div>
 
           {/* Elevated Wrapper matching your contact page styling */}
-          <div className="p-1 rounded-2xl bg-gradient-to-b from-brand-accent/20 to-transparent shadow-lg transition-colors duration-300">
-            <div className="bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-brand-accent/10 rounded-xl p-6 md:p-8 transition-colors duration-300">
+          <div className="p-1 rounded-2xl bg-gradient-to-b from-brand-accent/20 to-transparent shadow-lg">
+            <div className="bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-brand-accent/10 rounded-xl p-6 md:p-8">
               <JobMatcher />
             </div>
           </div>
