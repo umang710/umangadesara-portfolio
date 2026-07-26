@@ -69,8 +69,8 @@ export function Navbar() {
 
           {/* Resume Button */}
           <a
-            href="/Umang_Adesara_Resume.pdf"
-            download="Umang_Adesara_Resume.pdf"
+            href="/Umang Adesara.pdf"
+            download="Umang Adesara.pdf"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-brand-accent text-white hover:bg-brand-accent-hover shadow-sm transition-colors font-semibold ml-2"
@@ -106,8 +106,8 @@ export function Navbar() {
 
           {/* Resume Button */}
           <a
-            href="/Umang_Adesara_Resume.pdf"
-            download="Umang_Adesara_Resume.pdf"
+            href="/Umang Adesara.pdf"
+            download="Umang Adesara.pdf"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-brand-accent text-white hover:bg-brand-accent-hover text-xs font-semibold shadow-sm transition-colors"
