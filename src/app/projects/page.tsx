@@ -1,6 +1,7 @@
 import { Terminal, ExternalLink, Hammer } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Reveal } from "@/components/ui/Reveal";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 export const metadata = {
   title: "Projects",
@@ -40,123 +41,176 @@ export default function ProjectsPage() {
             </a>
           </div>
 
-          {/* Work in Progress Banner */}
-          <div className="flex items-start sm:items-center gap-3 p-4 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm border border-brand-accent/20 rounded-lg shadow-sm transition-colors duration-300">
-            <div className="p-2 bg-brand-accent/10 rounded-md shrink-0">
-              <Hammer className="w-4 h-4 text-brand-accent" />
-            </div>
-            <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-              <span className="text-brand-accent font-semibold">
-                Infrastructure Update:
-              </span>{" "}
-              These deployments are currently being migrated. Live project links
-              are temporarily disabled and will be available soon.
-            </p>
-          </div>
-
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-            {/* Project 1 */}
-            <a
-              href="#"
-              aria-disabled="true"
-              className="group block p-6 border border-brand-accent/20 rounded-xl bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm shadow-sm relative overflow-hidden opacity-60 pointer-events-none transition-colors duration-300"
-            >
-              <div className="absolute top-4 right-4 text-zinc-400 dark:text-zinc-500">
-                <ExternalLink className="w-5 h-5" />
-              </div>
+            {/* Project 1: Autonomous AI Control Plane */}
+            <SpotlightCard className="group p-6 md:col-span-2 flex flex-col h-full hover:border-brand-accent/50 transition-colors duration-300">
               <div className="flex flex-col h-full justify-between">
                 <div>
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-lg mb-3">
-                    Personal Productivity Engine
+                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-lg mb-3 group-hover:text-brand-accent transition-colors duration-300">
+                    Autonomous AI Control Plane
                   </h3>
                   <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
-                    Engineered a cross-platform routine management application
-                    featuring a highly responsive frontend and sub-50ms
-                    real-time database syncing.
+                    An intelligent, self-healing system simulator that uses
+                    predictive algorithms and AI to autonomously manage queue
+                    capacities, detect anomalies, and auto-scale infrastructure
+                    based on simulated traffic spikes.
                   </p>
                 </div>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-brand-accent/10">
-                  <div className="flex flex-wrap gap-2 font-mono text-xs">
-                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
-                      Flutter
-                    </span>
-                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
-                      Supabase
-                    </span>
-                  </div>
-                  <FaGithub className="w-5 h-5 text-zinc-400 dark:text-zinc-500" />
-                </div>
-              </div>
-            </a>
 
-            {/* Project 2 */}
-            <a
-              href="#"
-              aria-disabled="true"
-              className="group block p-6 border border-brand-accent/20 rounded-xl bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm shadow-sm relative overflow-hidden opacity-60 pointer-events-none transition-colors duration-300"
-            >
-              <div className="absolute top-4 right-4 text-zinc-400 dark:text-zinc-500">
-                <ExternalLink className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col h-full justify-between">
-                <div>
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-lg mb-3">
-                    Geospatial Mapping System
-                  </h3>
-                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
-                    Built an interactive GIS dashboard successfully visualizing
-                    over 10,000 complex environmental metrics for dynamic
-                    spatial data analysis.
-                  </p>
-                </div>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-brand-accent/10">
-                  <div className="flex flex-wrap gap-2 font-mono text-xs">
-                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
-                      Leaflet.js
-                    </span>
-                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
-                      QGIS
-                    </span>
-                  </div>
-                  <FaGithub className="w-5 h-5 text-zinc-400 dark:text-zinc-500" />
-                </div>
-              </div>
-            </a>
-
-            {/* Project 3 */}
-            <a
-              href="#"
-              aria-disabled="true"
-              className="group block p-6 border border-brand-accent/20 rounded-xl bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm shadow-sm relative overflow-hidden md:col-span-2 opacity-60 pointer-events-none transition-colors duration-300"
-            >
-              <div className="absolute top-4 right-4 text-zinc-400 dark:text-zinc-500">
-                <ExternalLink className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col h-full justify-between">
-                <div>
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-lg mb-3">
-                    Code Summarization Framework
-                  </h3>
-                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
-                    Developed an NLP-driven code summarization framework
-                    generating context-aware explanations, effectively reducing
-                    manual code review times by 20% to improve maintainability.
-                  </p>
-                </div>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-brand-accent/10">
+                <div className="flex flex-col mt-auto pt-4 border-t border-brand-accent/10 gap-4">
                   <div className="flex flex-wrap gap-2 font-mono text-xs">
                     <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
                       Python
                     </span>
                     <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
-                      PyTorch
+                      Docker
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      Redis
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      Pandas
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      Streamlit
                     </span>
                   </div>
-                  <FaGithub className="w-5 h-5 text-zinc-400 dark:text-zinc-500" />
+
+                  {/* Action Links */}
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://autonomous-ai-control-plane.up.railway.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-brand-accent bg-brand-accent/10 hover:bg-brand-accent hover:text-white rounded-md transition-colors duration-75"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/umang710/AI-Control-Plane"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-md transition-colors duration-75"
+                    >
+                      <FaGithub className="w-3.5 h-3.5" />
+                      Source
+                    </a>
+                  </div>
                 </div>
               </div>
-            </a>
+            </SpotlightCard>
+
+            {/* Project 2: Academic Intelligence Assistant */}
+            <SpotlightCard className="group p-6 flex flex-col h-full hover:border-brand-accent/50 transition-colors duration-300">
+              <div className="flex flex-col h-full justify-between">
+                <div>
+                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-lg mb-3 group-hover:text-brand-accent transition-colors duration-300">
+                    Academic Intelligence Assistant
+                  </h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
+                    Context-aware RAG academic assistant built on Groq LPUs for
+                    zero-latency inference. Features a custom intent router,
+                    local FAISS vector search, and live web fallback.
+                  </p>
+                </div>
+
+                <div className="flex flex-col mt-auto pt-4 border-t border-brand-accent/10 gap-4">
+                  <div className="flex flex-wrap gap-2 font-mono text-xs">
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      Groq LPU
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      LangChain
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      RAG
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      FAISS
+                    </span>
+                  </div>
+
+                  {/* Action Links */}
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://academicchatbotumang.streamlit.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-brand-accent bg-brand-accent/10 hover:bg-brand-accent hover:text-white rounded-md transition-colors duration-75"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/umang710/Academic_chatbot"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-md transition-colors duration-75"
+                    >
+                      <FaGithub className="w-3.5 h-3.5" />
+                      Source
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </SpotlightCard>
+
+            {/* Project 3: SEO Content Quality Detector */}
+            <SpotlightCard className="group p-6 flex flex-col h-full hover:border-brand-accent/50 transition-colors duration-300">
+              <div className="flex flex-col h-full justify-between">
+                <div>
+                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-lg mb-3 group-hover:text-brand-accent transition-colors duration-300">
+                    SEO Content Quality Detector
+                  </h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
+                    ML-powered web application that analyzes URLs to predict SEO
+                    content quality using a trained Random Forest model and
+                    BeautifulSoup text extraction.
+                  </p>
+                </div>
+
+                <div className="flex flex-col mt-auto pt-4 border-t border-brand-accent/10 gap-4">
+                  <div className="flex flex-wrap gap-2 font-mono text-xs">
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      Scikit-Learn
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      NLTK
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      BeautifulSoup
+                    </span>
+                    <span className="bg-white dark:bg-zinc-950 border border-brand-accent/30 text-brand-accent px-2.5 py-1 rounded-md shadow-sm">
+                      Python
+                    </span>
+                  </div>
+
+                  {/* Action Links */}
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://seo-content-detector-umang710.streamlit.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-brand-accent bg-brand-accent/10 hover:bg-brand-accent hover:text-white rounded-md transition-colors duration-75"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/umang710/seo-content-detector"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-md transition-colors duration-75"
+                    >
+                      <FaGithub className="w-3.5 h-3.5" />
+                      Source
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </SpotlightCard>
           </div>
         </section>
       </Reveal>
