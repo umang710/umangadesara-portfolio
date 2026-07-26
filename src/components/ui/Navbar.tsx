@@ -40,12 +40,7 @@ export function Navbar() {
           >
             Architecture
           </Link>
-          <Link
-            href="/blog"
-            className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
-          >
-            Blog
-          </Link>
+
           <Link
             href="/contact"
             className="hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
@@ -157,13 +152,6 @@ export function Navbar() {
             className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10"
           >
             Architecture
-          </Link>
-          <Link
-            href="/blog"
-            onClick={() => setIsOpen(false)}
-            className="text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-brand-accent py-2 border-b border-brand-accent/10"
-          >
-            Blog
           </Link>
 
           <Link

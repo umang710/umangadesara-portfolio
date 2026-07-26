@@ -9,6 +9,8 @@ import {
   MonitorSmartphone,
   ArrowRight,
   ArrowDown,
+  FileText,
+  Zap,
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -195,6 +197,42 @@ export default function ArchitecturePage() {
                 <code>useFormStatus</code>) are used surgically only in Client
                 Components (like the video player and matcher), keeping the
                 global bundle exceptionally lightweight.
+              </p>
+            </div>
+
+            {/* Card 7: MDX Pre-compilation */}
+            <div className="p-6 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-brand-accent/20 rounded-xl shadow-sm transition-colors duration-300 hover:border-brand-accent/40">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-brand-accent/10 rounded-md">
+                  <FileText className="w-5 h-5 text-brand-accent" />
+                </div>
+                <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  Edge-Optimized MDX
+                </h2>
+              </div>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm">
+                To completely bypass Cloudflare&apos;s strict Edge Worker
+                filesystem limits, a custom Node prebuild script compiles
+                Markdown (MDX) into a static JSON payload, enabling zero-latency
+                reads.
+              </p>
+            </div>
+
+            {/* Card 8: Framer Motion Physics */}
+            <div className="p-6 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-brand-accent/20 rounded-xl shadow-sm transition-colors duration-300 hover:border-brand-accent/40">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-brand-accent/10 rounded-md">
+                  <Zap className="w-5 h-5 text-brand-accent" />
+                </div>
+                <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  60FPS Physics Engine
+                </h2>
+              </div>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm">
+                Micro-interactions and reveal animations are powered by Framer
+                Motion&apos;s spring physics. Animations are isolated from
+                standard CSS transitions to prevent GPU layout thrashing and
+                maintain a strict 60fps.
               </p>
             </div>
           </div>
