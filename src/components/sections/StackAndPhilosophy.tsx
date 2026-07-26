@@ -18,24 +18,27 @@ export function StackAndPhilosophy() {
             The Philosophy
           </h3>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed text-justify transition-colors duration-300">
-            I build high-performance web applications with a focus on edge
-            computing, secure database architectures, and seamless user
-            experiences. Specializing in full-lifecycle development to ensure
-            systems are scalable from day one.
+            I build high-performance web applications that bridge the gap
+            between scalable full-stack engineering and Artificial Intelligence.
+            Specializing in edge computing, secure architectures, and deploying
+            production-ready AI models to create seamless user experiences.
           </p>
         </div>
 
         <div className="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
           {[
-            "Java",
-            "Python",
             "TypeScript",
             "Next.js",
-            "React",
             "Node.js",
+            "Java",
             "AWS",
             "Docker",
-            "Supabase",
+            "Redis",
+            "Python",
+            "PyTorch",
+            "Scikit-Learn",
+            "LangChain",
+            "FAISS",
           ].map((tech) => (
             <div
               key={tech}

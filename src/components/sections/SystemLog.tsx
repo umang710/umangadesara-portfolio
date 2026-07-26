@@ -28,10 +28,10 @@ export function SystemLog() {
             </span>
           </div>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed text-justify transition-colors duration-300">
-            Architecting and deploying a highly scalable, full-stack investment
-            analysis platform. Engineered optimized REST APIs and a relational
-            MySQL schema, reducing data retrieval latency by 40% for over 500
-            active users.
+            Architecting a high-performance investment analysis platform using
+            Next.js and Supabase. Implementing backend caching strategies to
+            reduce data retrieval latency by 40% and achieve 99.9% uptime for
+            500+ active users.
           </p>
         </div>
 
@@ -71,10 +71,9 @@ export function SystemLog() {
             </span>
           </div>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed text-justify transition-colors duration-300">
-            Developed critical components of an Employee Management System
-            utilizing Python and Node.js. Optimized backend SQL queries to
-            successfully reduce data retrieval times by 15% across HR
-            operations.
+            Developed and integrated critical components of an Employee
+            Management System utilizing Python and Node.js, streamlining human
+            resource operations and saving 15+ hours weekly for 200+ employees.
           </p>
         </div>
 
