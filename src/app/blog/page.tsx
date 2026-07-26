@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getBlogPosts } from "@/lib/mdx";
 import { BookOpen } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata = {
   title: "Blog | Umang Adesara",
   description:

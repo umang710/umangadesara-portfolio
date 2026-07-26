@@ -4,6 +4,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const posts = getBlogPosts();
   return posts.map((post) => ({
