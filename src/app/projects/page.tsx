@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata = {
-  title: "Projects | Umang Adesara",
+  title: "Projects",
   description: "Live deployments and technical architecture.",
 };
 

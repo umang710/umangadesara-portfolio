@@ -15,7 +15,7 @@ import {
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata = {
-  title: "Architecture | Umang Adesara",
+  title: "Architecture",
   description: "A deep dive into the engineering behind this portfolio.",
 };
 

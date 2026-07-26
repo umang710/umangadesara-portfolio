@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export const dynamic = "force-static";
 
 export const metadata = {
-  title: "Blog | Umang Adesara",
+  title: "Blog",
   description:
     "Writing about software engineering, data science, and system design.",
 };

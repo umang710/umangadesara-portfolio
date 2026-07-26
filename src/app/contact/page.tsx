@@ -3,7 +3,7 @@ import { Zap } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata = {
-  title: "Contact | Umang Adesara",
+  title: "Contact",
   description: "Secure communication channel.",
 };
 

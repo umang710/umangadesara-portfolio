@@ -25,7 +25,7 @@ export async function generateMetadata({
     return { title: "Post Not Found" };
   }
   return {
-    title: `${post.meta.title} | Umang Adesara`,
+    title: post.meta.title,
     description: post.meta.description,
   };
 }

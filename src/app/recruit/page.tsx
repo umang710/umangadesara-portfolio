@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata = {
-  title: "Recruit Me | Umang Adesara",
+  title: "Recruit Me",
   description: "AI-driven system fit and technical stack alignment analyzer.",
 };
 
