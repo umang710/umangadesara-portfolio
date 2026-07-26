@@ -21,7 +21,7 @@ export function Hero() {
 
         <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-xl leading-relaxed transition-colors duration-300">
           Software Engineer. Architecting scalable, full-stack systems and
-          data-driven solutions from the edge to the database.
+          AI-driven solutions from the edge to the database.
         </p>
       </div>
 
